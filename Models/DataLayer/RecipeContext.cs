@@ -13,5 +13,14 @@ namespace WebServerAppFinalProject.Models
         { }
 
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Season> Seasons { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new SeasonConfig());
+            modelBuilder.ApplyConfiguration(new CategoryConfig());
+            modelBuilder.ApplyConfiguration(new RecipeConfig()); 
+        }
     }
 }
