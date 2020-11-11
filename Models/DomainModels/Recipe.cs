@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebServerAppFinalProject.Models
 {
@@ -27,6 +28,7 @@ namespace WebServerAppFinalProject.Models
         public int CategoryId { get; set; } //Foreign key property 
         public Category Category { get; set; } //Navigation property 
 
+        //Make nullable - int?SeasonId
         public int SeasonId { get; set; } //Foreign key property 
         public Season Season { get; set; } //Navigation property 
     }
