@@ -1,0 +1,43 @@
+﻿@model Recipe
+
+@{
+    ViewData["Title"] = $"{ViewBag.Operation} Recipe";
+}
+
+<h1 class="display-4">@ViewBag.Operation Class</h1>
+<div class="pl-3">
+    <form asp-action="Add" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="RecipeUrl"></label>
+            <input asp-for="RecipeUrl" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Difficulty"></label>
+            <input asp-for="Difficulty" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Category"></label>
+            <select asp-for="CategoryId" class="form-control"
+                    asp-items="@(new SelectList(ViewBag.Categories,"CategoryId","Name"))"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Season"></label>
+            <select asp-for="SeasonId" class="form-control"
+                    asp-items="@(new SelectList(ViewBag.Seasons,"SeasonId","Name"))"></select>
+        </div>
+
+
+        @if (ViewBag.Operation == "Edit")
+        {
+            <input type="hidden" asp-for="RecipeId" />
+        }
+
+        <button type="submit" class="btn btn-dark">@ViewBag.Operation</button>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-outline-dark">Cancel</a>
+    </form>
+</div>

@@ -10,18 +10,44 @@ namespace WebServerAppFinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        private RecipeContext context { get; set; }
+        private Repository<Recipe> recipes { get; set; }
+        private Repository<Category> categories { get; set; }
+        private Repository<Season> seasons { get; set; }
+
 
         public HomeController(RecipeContext ctx)
         {
-            context = ctx; 
+            recipes = new Repository<Recipe>(ctx);
+            categories = new Repository<Category>(ctx);
+            seasons = new Repository<Season>(ctx); 
         }
-        public IActionResult Index()
+        public ViewResult Index(int id)
         {
-            var recipes = context.Recipes.Include(r => r.Season)
-                .Include(r => r.Category)
-                .OrderBy(r => r.Name).ToList();
-            return View(recipes);
+            // options for Seasons query
+            var seasonOptions = new QueryOptions<Season>
+            {
+                OrderBy = s => s.SeasonId
+            };
+
+            // options for Recipes query
+            var recipeOptions = new QueryOptions<Recipe>
+            {
+                Includes = "Category, Season"
+            };
+            // order by Day if no filter. Otherwise, filter by day and order by time.
+            if (id == 0)
+            {
+                recipeOptions.OrderBy = s => s.SeasonId;
+            }
+            else
+            {
+                recipeOptions.Where = s => s.SeasonId == id;
+                recipeOptions.OrderBy = d => d.Difficulty;
+            }
+
+            // execute queries
+            ViewBag.Seasons = seasons.List(seasonOptions);
+            return View(recipes.List(recipeOptions));
         }
 
         [Route("[action]")]
