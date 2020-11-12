@@ -21,7 +21,7 @@ namespace WebServerAppFinalProject.Controllers
             categories = new Repository<Category>(ctx);
             seasons = new Repository<Season>(ctx); 
         }
-        public ViewResult Index(int id)
+        public ViewResult Index(int season, int category)
         {
             // options for Seasons query
             var seasonOptions = new QueryOptions<Season>
@@ -29,24 +29,36 @@ namespace WebServerAppFinalProject.Controllers
                 OrderBy = s => s.SeasonId
             };
 
+            //options for Category query 
+            var categoryOptions = new QueryOptions<Category>
+            {
+                OrderBy = c => c.CategoryId
+            };
+
             // options for Recipes query
             var recipeOptions = new QueryOptions<Recipe>
             {
                 Includes = "Category, Season"
             };
-            // order by Day if no filter. Otherwise, filter by day and order by time.
-            if (id == 0)
+            // order by Seasons if no filter. Otherwise, filter by season and order by time.
+            if(category != 0)
             {
-                recipeOptions.OrderBy = s => s.SeasonId;
+                recipeOptions.Where = c => c.CategoryId == category;
+                recipeOptions.OrderBy = d => d.Difficulty;
+            }
+            if(season != 0)
+            {
+                recipeOptions.Where = s => s.SeasonId == season; 
+                recipeOptions.OrderBy = d => d.Difficulty;
             }
             else
             {
-                recipeOptions.Where = s => s.SeasonId == id;
-                recipeOptions.OrderBy = d => d.Difficulty;
+                recipeOptions.OrderBy = c => c.CategoryId;
             }
 
             // execute queries
             ViewBag.Seasons = seasons.List(seasonOptions);
+            ViewBag.Categories = categories.List(categoryOptions); 
             return View(recipes.List(recipeOptions));
         }
 

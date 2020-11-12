@@ -3,17 +3,23 @@
     ViewBag.Title = "Emily's Baking Catalogue";
 
     // get value of id route segment
-    int id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+    int categoryid = Convert.ToInt32(ViewContext.RouteData.Values["category"]);
+    int seasonid = Convert.ToInt32(ViewContext.RouteData.Values["season"]);
 }
 
 
 <div class="text-center">
 
     <h2 class="display-4"> Emily's Baking Catalogue </h2>
+    @foreach (Category c in ViewBag.Categories)
+    {
+        string btnCss = (categoryid == c.CategoryId) ? "btn btn-primary" : "btn btn-outline-primary";
+        <a asp-action="Index" asp-route-category="@c.CategoryId" class="@btnCss mr-1 mb-2">@c.Name</a>
+    }
     @foreach (Season s in ViewBag.Seasons)
     {
-        string btnCss = (id == s.SeasonId) ? "btn btn-primary" : "btn btn-outline-primary";
-        <a asp-action="Index" asp-route-id="@s.SeasonId" class="@btnCss mr-1 mb-2">@s.Name</a>
+        string btnCss = (seasonid == s.SeasonId) ? "btn btn-primary" : "btn btn-outline-primary";
+        <a asp-action="Index" asp-route-season="@s.SeasonId" class="@btnCss mr-1 mb-2">@s.Name</a>
     }
 
 </div>
