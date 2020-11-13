@@ -11,6 +11,9 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/custom.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -45,9 +48,14 @@
         </nav>
 
     </header>
-    <div>
+    <div class="page-content">
         @RenderBody()
     </div>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">&#169; 2020 Copyright: <a href="https://www.linkedin.com/in/emily-bender-655934190/"> Emily Bender </a> </span>
+        </div>
+    </footer>
 </body>
 </html>
 
