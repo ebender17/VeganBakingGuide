@@ -10,8 +10,8 @@ using WebServerAppFinalProject.Models;
 namespace WebServerAppFinalProject.Migrations
 {
     [DbContext(typeof(RecipeContext))]
-    [Migration("20201110003544_Fix1")]
-    partial class Fix1
+    [Migration("20201117140613_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -151,6 +151,177 @@ namespace WebServerAppFinalProject.Migrations
                             Name = "Carrot Cake with Cream Cheese Icing",
                             RecipeUrl = "https://lovingitvegan.com/vegan-carrot-cake-lemon-buttercream-frosting/",
                             SeasonId = 3
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            CategoryId = 4,
+                            Difficulty = 3,
+                            Name = "Apple Pie",
+                            RecipeUrl = "https://www.gretchensveganbakery.com/the-best-apple-pie-recipe/",
+                            SeasonId = 4
+                        },
+                        new
+                        {
+                            RecipeId = 5,
+                            CategoryId = 2,
+                            Difficulty = 2,
+                            Name = "S'more Cookies",
+                            RecipeUrl = "https://www.hotforfoodblog.com/recipes/2014/08/09/smore-cookies/",
+                            SeasonId = 6
+                        },
+                        new
+                        {
+                            RecipeId = 6,
+                            CategoryId = 8,
+                            Difficulty = 3,
+                            Name = "King Cake",
+                            RecipeUrl = "https://foodwithfeeling.com/vegan-king-cake/",
+                            SeasonId = 3
+                        },
+                        new
+                        {
+                            RecipeId = 7,
+                            CategoryId = 1,
+                            Difficulty = 2,
+                            Name = "Zombie Brain Cupcakes",
+                            RecipeUrl = "https://www.bearplate.com/vegan-zombie-brain-cupcakes/",
+                            SeasonId = 5
+                        },
+                        new
+                        {
+                            RecipeId = 8,
+                            CategoryId = 1,
+                            Difficulty = 2,
+                            Name = "Strawberry Lemondade Cupcakes",
+                            RecipeUrl = "https://www.theppk.com/2020/05/strawberry-lemonade-cupcakes/",
+                            SeasonId = 3
+                        },
+                        new
+                        {
+                            RecipeId = 9,
+                            CategoryId = 2,
+                            Difficulty = 1,
+                            Name = "Sugar Cookies",
+                            RecipeUrl = "https://www.noracooks.com/vegan-sugar-cookies/",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 10,
+                            CategoryId = 9,
+                            Difficulty = 5,
+                            Name = "Croissants",
+                            RecipeUrl = "http://www.marystestkitchen.com/how-to-make-vegan-croissants/",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 11,
+                            CategoryId = 7,
+                            Difficulty = 3,
+                            Name = "Swiss Meringue Buttercream",
+                            RecipeUrl = "https://www.gretchensveganbakery.com/aquafaba-swiss-buttercream-recipe/",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 12,
+                            CategoryId = 9,
+                            Difficulty = 4,
+                            Name = "French Macarons",
+                            RecipeUrl = "https://www.youtube.com/watch?v=fKGDtUruRqE&t=271s",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 13,
+                            CategoryId = 8,
+                            Difficulty = 3,
+                            Name = "Hot Cross Buns",
+                            RecipeUrl = "https://www.avantgardevegan.com/recipes/hot-cross-vegan-buns/",
+                            SeasonId = 3
+                        },
+                        new
+                        {
+                            RecipeId = 14,
+                            CategoryId = 10,
+                            Difficulty = 3,
+                            Name = "Aquafaba Christmas Tree Meringues",
+                            RecipeUrl = "https://projectveganbaking.com/aquafaba-christmas-tree-meringues/",
+                            SeasonId = 2
+                        },
+                        new
+                        {
+                            RecipeId = 15,
+                            CategoryId = 2,
+                            Difficulty = 4,
+                            Name = "Pumpkin Roll",
+                            RecipeUrl = "https://makeitdairyfree.com/vegan-pumpkin-roll/",
+                            SeasonId = 4
+                        },
+                        new
+                        {
+                            RecipeId = 16,
+                            CategoryId = 2,
+                            Difficulty = 1,
+                            Name = "Chocolate Peppermint Crinkle Cookies",
+                            RecipeUrl = "https://www.mydarlingvegan.com/chocolate-peppermint-crinkle-cookies/",
+                            SeasonId = 2
+                        },
+                        new
+                        {
+                            RecipeId = 17,
+                            CategoryId = 3,
+                            Difficulty = 2,
+                            Name = "Rosemary Focaccia",
+                            RecipeUrl = "https://www.gimmesomeoven.com/rosemary-focaccia-bread/",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 18,
+                            CategoryId = 8,
+                            Difficulty = 3,
+                            Name = "Cinnamon Rolls",
+                            RecipeUrl = "https://tasty.co/recipe/the-best-ever-vegan-cinnamon-rolls",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 19,
+                            CategoryId = 1,
+                            Difficulty = 1,
+                            Name = "Victoria Sponge",
+                            RecipeUrl = "https://veggiedesserts.com/vegan-victoria-sponge-recipe/",
+                            SeasonId = 6
+                        },
+                        new
+                        {
+                            RecipeId = 20,
+                            CategoryId = 9,
+                            Difficulty = 4,
+                            Name = "Pavlova",
+                            RecipeUrl = "https://projectveganbaking.com/vegan-pavlova/",
+                            SeasonId = 6
+                        },
+                        new
+                        {
+                            RecipeId = 21,
+                            CategoryId = 6,
+                            Difficulty = 2,
+                            Name = "Salted Caramel Brownie",
+                            RecipeUrl = "https://tasty.co/recipe/the-best-ever-vegan-cinnamon-rolls",
+                            SeasonId = 1
+                        },
+                        new
+                        {
+                            RecipeId = 22,
+                            CategoryId = 4,
+                            Difficulty = 3,
+                            Name = "Lemon Meringue Pie",
+                            RecipeUrl = "https://tasty.co/recipe/the-best-ever-vegan-cinnamon-rolls",
+                            SeasonId = 3
                         });
                 });
 
@@ -213,13 +384,13 @@ namespace WebServerAppFinalProject.Migrations
                     b.HasOne("WebServerAppFinalProject.Models.Category", "Category")
                         .WithMany("Recipes")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("WebServerAppFinalProject.Models.Season", "Season")
                         .WithMany("Recipes")
                         .HasForeignKey("SeasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
