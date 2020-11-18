@@ -73,5 +73,11 @@ namespace WebServerAppFinalProject.Controllers
         {
             return View();
         }
+
+        [Route("[action]")]
+        public IActionResult Advice()
+        {
+            return View();
+        }
     }
 }
