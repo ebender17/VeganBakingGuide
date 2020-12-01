@@ -10,16 +10,17 @@
 
 <div class="text-center">
 
-    <h2 class="display-4"> Emily's Baking Catalogue </h2>
+    <h2 class="display-4 mb-4"> Emily's Baking Catalogue </h2>
+
     @foreach (Category c in ViewBag.Categories)
     {
         string btnCss = (categoryid == c.CategoryId) ? "btn btn-primary" : "btn btn-outline-primary";
-        <a asp-action="Index" asp-route-category="@c.CategoryId" class="@btnCss mr-1 mb-2">@c.Name</a>
+        <a asp-action="Index" asp-route-category="@c.CategoryId" class="@btnCss mr-1 mb-3">@c.Name</a>
     }
     @foreach (Season s in ViewBag.Seasons)
     {
         string btnCss = (seasonid == s.SeasonId) ? "btn btn-primary" : "btn btn-outline-primary";
-        <a asp-action="Index" asp-route-season="@s.SeasonId" class="@btnCss mr-1 mb-2">@s.Name</a>
+        <a asp-action="Index" asp-route-season="@s.SeasonId" class="@btnCss mr-1 mb-3">@s.Name</a>
     }
 
 </div>
@@ -46,7 +47,7 @@
                     <td> <a href=@recipe.RecipeUrl>@recipe.Name </a></td>
                     <td>
                         <a asp-action="Edit" asp-controller="Recipe" asp-route-id="@recipe.RecipeId"
-                           class="btn btn-outline-secondary">Edit</a>
+                           class="btn btn-outline-secondary my-2">Edit</a>
                         <a asp-action="Delete" asp-controller="Recipe" asp-route-id="@recipe.RecipeId"
                            class="btn btn-outline-secondary">Delete</a>
                     </td>
