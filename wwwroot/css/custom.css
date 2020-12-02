@@ -3,8 +3,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.page-content {
+.page-container {
     padding-top: 6em!important;
+    position: relative;
+    min-height: 100vh; 
 }
 
 h1, h2, h3, h4 {
@@ -57,6 +59,10 @@ a, a:hover
     color: #fff;
     border-color: #3A405A;
     background-color: #3A405A;
+}
+
+#delete-form {
+    padding-bottom: 15em; 
 }
 
 .footer {
